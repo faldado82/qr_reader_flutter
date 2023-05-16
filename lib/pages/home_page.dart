@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_reader_flutter/pages/direcciones_page.dart';
 import 'package:qr_reader_flutter/pages/history_mapas_page.dart';
+import 'package:qr_reader_flutter/provider/db_provider.dart';
 import 'package:qr_reader_flutter/provider/ui_provider.dart';
 import 'package:qr_reader_flutter/widgets/custom_bottom_navigation_bar.dart';
 import 'package:qr_reader_flutter/widgets/scan_button.dart';
@@ -35,7 +36,11 @@ class _HomePageBody extends StatelessWidget {
     // obtener el selected menu index del provider
     final uiProvider = Provider.of<UiProvider>(context);
 
+    // se cambia para mostrar la pagina en la que se haga tap
     final currentIndex = uiProvider.selectedMenuIndex;
+
+    //! TODO: temporal leer la base de datos
+    DBProvider.db.database;
 
     switch (currentIndex) {
       case 0:
