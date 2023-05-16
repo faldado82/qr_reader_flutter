@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:qr_reader_flutter/provider/ui_provider.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const currentIndex = 0;
+    final uiProvider = Provider.of<UiProvider>(context);
+
+    final currentIndex = uiProvider.selectedMenuIndex;
 
     return BottomNavigationBar(
-        currentIndex: currentIndex,
+        onTap: (int i) => uiProvider.selectedMenuIndex = i,
+        currentIndex: currentIndex, // uiProvider.selectedMenuIndex;
         elevation: 0,
         items: const [
           BottomNavigationBarItem(

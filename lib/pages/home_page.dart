@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:qr_reader_flutter/pages/direcciones_page.dart';
 import 'package:qr_reader_flutter/pages/history_mapas_page.dart';
+import 'package:qr_reader_flutter/provider/ui_provider.dart';
 import 'package:qr_reader_flutter/widgets/custom_bottom_navigation_bar.dart';
 import 'package:qr_reader_flutter/widgets/scan_button.dart';
 
@@ -30,7 +32,10 @@ class HomePage extends StatelessWidget {
 class _HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const currentIndex = 0;
+    // obtener el selected menu index del provider
+    final uiProvider = Provider.of<UiProvider>(context);
+
+    final currentIndex = uiProvider.selectedMenuIndex;
 
     switch (currentIndex) {
       case 0:
