@@ -39,8 +39,16 @@ class _HomePageBody extends StatelessWidget {
     // se cambia para mostrar la pagina en la que se haga tap
     final currentIndex = uiProvider.selectedMenuIndex;
 
-    //! TODO: temporal leer la base de datos
-    DBProvider.db.database;
+    // temporal leer la base de datos
+    // DB_PROVIDER Metodo simple o rapido
+    final tempScan = ScanModel(valor: 'http://hola.com');
+    DBProvider.db.nuevoScan(tempScan);
+
+    // DB_PROVIDER Metodo Raw (crudo o a mano)
+    //final tempScanRaw = ScanModel(valor: 'http://ScanRaw.com');
+    //DBProvider.db.nuevoScanRaw(tempScanRaw);
+
+    DBProvider.db.getScanById(17).then((scan) => print(scan?.valor));
 
     switch (currentIndex) {
       case 0:
