@@ -40,15 +40,24 @@ class _HomePageBody extends StatelessWidget {
     final currentIndex = uiProvider.selectedMenuIndex;
 
     // temporal leer la base de datos
-    // DB_PROVIDER Metodo simple o rapido
-    final tempScan = ScanModel(valor: 'http://hola.com');
-    DBProvider.db.nuevoScan(tempScan);
+    // CREATE DB_PROVIDER Metodo simple o rapido
+    //final tempScan = ScanModel(valor: 'http://hola.com');
+    //DBProvider.db.nuevoScan(tempScan);
 
-    // DB_PROVIDER Metodo Raw (crudo o a mano)
+    // CREATE DB_PROVIDER Metodo Raw (crudo o a mano)
     //final tempScanRaw = ScanModel(valor: 'http://ScanRaw.com');
     //DBProvider.db.nuevoScanRaw(tempScanRaw);
 
-    DBProvider.db.getScanById(17).then((scan) => print(scan?.valor));
+    // Get by ID
+    //DBProvider.db.getScanById(17).then((scan) => print(scan?.valor));
+
+    // Get all Scans
+    //DBProvider.db.getAllScan().then(print);
+    
+    //Delete All
+    //DBProvider.db.deleteAllScans().then(print);
+
+
 
     switch (currentIndex) {
       case 0:
