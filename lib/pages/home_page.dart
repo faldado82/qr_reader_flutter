@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_reader_flutter/pages/direcciones_page.dart';
 import 'package:qr_reader_flutter/pages/history_mapas_page.dart';
-import 'package:qr_reader_flutter/provider/db_provider.dart';
 import 'package:qr_reader_flutter/provider/scan_list_provider.dart';
 import 'package:qr_reader_flutter/provider/ui_provider.dart';
 import 'package:qr_reader_flutter/widgets/custom_bottom_navigation_bar.dart';
@@ -24,7 +23,7 @@ class HomePage extends StatelessWidget {
                   Provider.of<ScanListProvider>(context, listen: false);
 
               scanListProvider.borrarTodosLosScans();
-              print('registros eliminados');
+              debugPrint('registros eliminados');
             },
           )
         ],
